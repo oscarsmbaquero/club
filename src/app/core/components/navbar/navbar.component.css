@@ -30,6 +30,13 @@ span, h1, a, h5 {
     color: white; /* Color del texto al pasar el mouse */
 }
 
+.offcanvas .btn-close {
+    filter: invert(1); /* Invierte el color para que sea blanco */
+    background-color: transparent !important; /* Fondo transparente */
+    border: none !important; /* Sin borde */
+    box-shadow: none !important; /* Eliminar cualquier sombra */
+}
+
   
 
 
