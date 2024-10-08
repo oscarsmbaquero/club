@@ -1,0 +1,30 @@
+.main {
+
+    min-height: calc(100vh - 120px); 
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1200px) {
+      padding: 15px;
+    }
+  
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  
+    @media (max-width: 576px) {
+      padding: 5px;
+    }
+  }  
+  app-navbar {
+    width: 100%;
+  }
+  
+  app-footer {
+    width: 100%;
+    margin-top: auto;
+  }
+  

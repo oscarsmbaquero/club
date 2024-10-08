@@ -1,0 +1,155 @@
+span {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+  }
+  
+  @media (max-width: 768px) {
+    span {
+      font-size: 13px;
+      font-family: 'Open Sans', sans-serif;
+      color:white;
+    }
+  }
+
+  .fondo{
+    background-color: #0e0d0c;
+    padding: 15px;
+  }
+  
+  .navbar-toggler {
+    /* margin: 0 auto; */
+    /* border: solid 1px rgb(223, 228, 192); */
+    font-size: 0.8em;
+    margin-right: 10px;
+  }
+  
+  .badge {
+    margin-left: 4px;
+  }
+  
+  .new-products {
+    width: 30px;
+  }
+  
+  .selected span {
+    /* color: blue; */
+    font-weight: bold;
+    /* O cualquier estilo de subrayado deseado */
+  }
+  
+  /* .navbar-toggler:focus,
+  .navbar-toggler:hover {
+    background-color: white;
+  } */
+  /*
+  .avatar {
+    @media screen and (min-width: 760px) {
+      border-radius: 50%;
+    }
+  }
+  .avatar:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+  }
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  } */
+  
+  /* CSS for desktop version */
+  @media (min-width: 768px) {
+    .navbar-container {
+      display: flex;
+      justify-content: space-between; /* Align items to the left and right */
+      align-items: center;
+    }
+  
+    .selected {
+      border-bottom: 3px solid rgb(226, 209, 52); 
+    }
+  
+    .navbar-right {
+      display: flex;
+      gap: 10px;
+    }
+  
+    .selected span {
+      /* color: blue; */
+      font-weight: bold;
+      /* O cualquier estilo de subrayado deseado */
+    }
+    
+  }
+  
+  /* Menu hamburguesa */
+  .hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    border: none;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    /* .selected {
+      border-bottom: 3px solid rgb(226, 209, 52);
+      width: 40px;
+      font-weight: bold;
+    } */
+    .selected span {
+      /* color: blue; */
+      font-weight: bold;
+      color: rgb(226, 209, 52);
+      /* O cualquier estilo de subrayado deseado */
+    }
+    .dropdown-divider {
+      width: 80%;
+      border: 0.3px solid #fff;
+      margin: 1px 0; /* Ajusta los márgenes según sea necesario */
+    }
+    /*
+    *estilos para el idioma seleccionado 
+    */
+     
+}
+
