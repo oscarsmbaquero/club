@@ -1,93 +1,58 @@
-span {
+span, h1, a, h5 {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     color:white;
   }
-  
-  @media (max-width: 768px) {
-    span {
-      font-size: 13px;
-      font-family: 'Open Sans', sans-serif;
-      color:white;
-    }
-  }
 
-  .fondo{
-    background-color: #0e0d0c;
-    padding: 15px;
-  }
+  .nav-link {
+    color: white; /* Color de texto por defecto */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #f0f0f0; /* Color de texto al pasar el mouse o al estar enfocado */
+}
+
+.nav-link.active {
+    color: blue; /* Color del enlace activo (seleccionado) */
+}
+
+.dropdown-menu {
+    background-color: black; /* Fondo del menú desplegable */
+}
+
+.dropdown-item {
+    color: white; /* Color del texto en el menú desplegable */
+}
+
+.dropdown-item:hover {
+    background-color: #333; /* Fondo del elemento al pasar el mouse */
+    color: white; /* Color del texto al pasar el mouse */
+}
+
   
-  .navbar-toggler {
-    /* margin: 0 auto; */
-    /* border: solid 1px rgb(223, 228, 192); */
-    font-size: 0.8em;
-    margin-right: 10px;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  .badge {
-    margin-left: 4px;
-  }
-  
-  .new-products {
-    width: 30px;
-  }
-  
-  .selected span {
-    /* color: blue; */
-    font-weight: bold;
-    /* O cualquier estilo de subrayado deseado */
-  }
-  
-  /* .navbar-toggler:focus,
-  .navbar-toggler:hover {
-    background-color: white;
-  } */
-  /*
-  .avatar {
-    @media screen and (min-width: 760px) {
-      border-radius: 50%;
-    }
-  }
-  .avatar:hover {
-    transform: rotate(360deg);
-    transition-duration: 2s;
-  }
-  .navbar-collapse {
-    justify-content: flex-end;
-  }
-  
-  .navbar-nav {
-    flex-direction: row;
-  }
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-  } */
-  
-  /* CSS for desktop version */
-  @media (min-width: 768px) {
-    .navbar-container {
-      display: flex;
-      justify-content: space-between; /* Align items to the left and right */
-      align-items: center;
-    }
-  
-    .selected {
-      border-bottom: 3px solid rgb(226, 209, 52); 
-    }
-  
-    .navbar-right {
-      display: flex;
-      gap: 10px;
-    }
-  
-    .selected span {
-      /* color: blue; */
-      font-weight: bold;
-      /* O cualquier estilo de subrayado deseado */
-    }
-    
-  }
   
   /* Menu hamburguesa */
   .hamburger {
