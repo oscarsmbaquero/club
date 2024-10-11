@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router'; // Import the RouterModule here
-import { NavbarService } from '../../services/navbarService/navbar.service';
+//import { NavbarService } from '../../services/navbarService/navbar.service';
+import { OffcanvasService } from '../../services/offcanvasService/offcanvas.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,19 +15,19 @@ currentTheme: any;
 selectedOption: any;
 
 
-constructor(private navbarService: NavbarService){
+constructor(private offcanvasService: OffcanvasService){
 
 }
-
-selectOption(option: string) {
-  this.navbarService.setSelectedOption(option);
-  //this.selectedOption = option;
-  this.toggleNavbar();
-}
-
-toggleNavbar() {
-    this.navbarService.collapseNavbar();
-    
+ngAfterViewInit(): void {
+  const offcanvasElement = document.getElementById('offcanvasNavbar');
+  if (offcanvasElement) {
+    this.offcanvasService.setOffcanvasElement(offcanvasElement);
   }
+}
+
+// Método que se llamará al hacer clic en un enlace para cerrar el offcanvas
+closeOffcanvas(): void {
+  this.offcanvasService.closeOffcanvas();
+}
 
 }
