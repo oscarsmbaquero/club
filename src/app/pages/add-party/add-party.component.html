@@ -1,0 +1,56 @@
+<div class="main-container">
+  <!-- <div class="image-container">
+    <img src="../../../assets/images/foto-foco.jpg" alt="Evento" />
+  </div> -->
+  <div class="login-container">
+    <img
+      src="/images/logo.avif"
+      width="80"
+      height="80"
+      alt="logo"
+    />&nbsp;
+    <form (ngSubmit)="onSubmit()" [formGroup]="addParty">
+      <div>
+        <input type="nombre" placeholder="Nombre Fiesta" formControlName="name" />
+        @if(addParty.get('name')?.invalid && addParty.get('name')?.touched){
+        <div>
+          @if(addParty.get('name')?.errors?.['required']){
+          <small style="color: red">campo oblogarorio</small>
+          }
+        </div>
+        }
+      </div>
+      <div>
+        <input type="nombre" placeholder="Descripcion del evento" formControlName="description" />
+        @if(addParty.get('description')?.invalid && addParty.get('description')?.touched){
+        <div>
+          @if(addParty.get('description')?.errors?.['required']){
+          <small style="color: red">campo oblogarorio</small>
+          }
+        </div>
+        }
+      </div>
+      <div>
+        <input type="nombre" placeholder="fecha" formControlName="fecha" />
+        @if(addParty.get('fecha')?.invalid && addParty.get('fecha')?.touched){
+        <div>
+          @if(addParty.get('fecha')?.errors?.['required']){
+          <small style="color: red">campo oblogarorio</small>
+          }
+        </div>
+        }
+      </div>
+      <input type="file" 
+          (change)="onFileSelected($event)" 
+          accept="image/*"
+          >
+
+      <button
+        [disabled]="!addParty.valid"
+        class="boton"
+        style="margin-top: 10px">
+        <span style="color: white; margin-top: 10px">Enviar</span>
+      </button>
+    </form>
+  </div>
+</div>
