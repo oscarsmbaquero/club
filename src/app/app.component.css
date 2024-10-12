@@ -1,30 +1,36 @@
 .main {
+  min-height: calc(100vh - 120px); 
+  padding: 20px;
+  width: 100%; /* Elimina max-width */
+  background-color: rgb(36, 0, 70);
+  display: flex;
+  flex-direction: column;
+}
 
-    min-height: calc(100vh - 120px); 
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; 
-    display: flex;
-    flex-direction: column;
-    @media (max-width: 1200px) {
+.main .content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto; /* Mantiene el contenido centrado */
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .main {
       padding: 15px;
-    }
-  
-    @media (max-width: 768px) {
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
       padding: 10px;
-    }
-  
-    @media (max-width: 576px) {
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
       padding: 5px;
-    }
-  }  
-  app-navbar {
-    width: 100%;
   }
-  
-  app-footer {
-    width: 100%;
-    margin-top: auto;
-  }
-  
+}
+
+app-navbar, app-footer {
+  width: 100%;
+}
