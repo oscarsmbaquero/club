@@ -1,1 +1,9 @@
-<p style="margin-top: 50px;">home works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-12 image-container" *ngFor="let image of images; let i = index"
+      [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+      >
+        <div class="parallax-image" [ngStyle]="{'background-image': 'url(' + image + ')'}" data-aos="fade-up"></div>
+      </div>
+    </div>
+  </div>
