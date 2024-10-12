@@ -1,6 +1,11 @@
 <nav class="navbar fixed-top" style="background-color: black">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="color: white">Club swinger</a>
+    <a class="navbar-brand" href="#" style="color: white"><img
+      src="/images/logo.JPG"
+      width="60"
+      height="60"
+      alt="logo"
+    /></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -28,7 +33,12 @@
       style="background-color: black"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Club swinger</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img
+          src="/images/logo.JPG"
+          width="40"
+          height="40"
+          alt="logo"
+        /></h5>
         <button
           type="button"
           class="btn-close custom-close"
@@ -41,16 +51,20 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" [routerLink]="['']" (click)="closeOffcanvas()">Home</a>
           </li>
+          <hr style="color: white;"/>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" [routerLink]="['gallery']" (click)="closeOffcanvas()">Galeria</a
             >
           </li>
+          <hr style="color: white;"/>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['partys']" (click)="closeOffcanvas()">Nuestras fiestas</a>
           </li>
+          <hr style="color: white;"/>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['contact']" (click)="closeOffcanvas()">Contacto</a>
           </li>
+          <hr style="color: white;"/>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -63,6 +77,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" [routerLink]="['add/party']" (click)="closeOffcanvas()">Añadir fiestas</a></li>
+              <hr style="color: white;"/>
               <li><a class="dropdown-item" href="#" (click)="closeOffcanvas()">Clientes</a></li>
               <!-- <li>
                   <hr class="dropdown-divider">
@@ -71,15 +86,6 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </div>
