@@ -6,3 +6,9 @@
 h1, h5,h6, p{
     font-family: 'Oswald', sans-serif;
 }
+.horario{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
