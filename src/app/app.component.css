@@ -1,12 +1,13 @@
 .main {
-  min-height: calc(100vh - 120px); 
+  min-height: calc(80vh - 120px); 
   padding: 20px;
   width: 100%; /* Elimina max-width */
   /* background-color: rgb(36, 0, 70); */
-  background-color: white;
+  background-color: #093456;
   display: flex;
+  padding-top: 100px;
   flex-direction: column;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .main .content-wrapper {
@@ -17,19 +18,19 @@
 
 @media (max-width: 1200px) {
   .main {
-      padding: 15px;
+    padding-top: 100px;
   }
 }
 
 @media (max-width: 768px) {
   .main {
-      padding: 10px;
+    padding-top: 100px;
   }
 }
 
 @media (max-width: 576px) {
   .main {
-      padding: 5px;
+      padding-top: 100px;
   }
 }
 

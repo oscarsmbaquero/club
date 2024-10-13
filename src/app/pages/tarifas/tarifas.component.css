@@ -1,14 +1,36 @@
 .tarifas{
     border: none;
-
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #093456;
 }
-
+@media (max-width: 720px) {
+    .tarifas {
+        width: 90%;
+    }
+}
 h1, h5,h6, p{
     font-family: 'Oswald', sans-serif;
+    color: white;
 }
 .horario{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+}
+
+/* estilos de los panel de primeng */
+:host ::ng-deep .custom-panel .p-panel-header {
+    background-color: black !important; /* Color del encabezado */
+    color: #fff !important; /* Color del texto en el encabezado */
+    border: none !important; /* Eliminar el borde si es necesario */
+    padding: 1.25rem !important; /* Ajustar el padding */
+}
+
+:host ::ng-deep .custom-panel .p-panel-content {
+    background: #093456 !important; /* Color del contenido */
+    color: #f1eeee !important; /* Color del texto */
 }
