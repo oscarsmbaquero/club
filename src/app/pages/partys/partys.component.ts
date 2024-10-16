@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { UsersService } from '../../core/services/users/users.service';
 
 @Component({
   selector: 'app-partys',
@@ -8,6 +10,19 @@ import { Component } from '@angular/core';
   styleUrl: './partys.component.css'
 })
 export class PartysComponent {
+
+  constructor(
+    private userService: UsersService
+  
+  ){}
+
+  ngOnInit(): void {
+   this.userService.getUSers().subscribe((element) =>{
+    console.log(element);
+    
+   })
+    
+  }
 
 
    obtenerMesActual() {

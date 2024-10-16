@@ -41,7 +41,7 @@ h2, p, h3 {
 }
 
 .card:hover {
-  transform: scale(1.09);
+  transform: scale(1.02);
 }
 
 /* Estilos para la superposición */
@@ -54,8 +54,7 @@ h2, p, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: center; 
   text-align: center;
  
 }
