@@ -9,7 +9,7 @@ import { AddPartyComponent } from './pages/add-party/add-party.component';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirigir a home por defecto
+    { path: '', redirectTo: '/home', pathMatch: 'full' }, 
     { path: 'home', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'gallery', component: GaleryComponent },
@@ -17,5 +17,5 @@ export const routes: Routes = [
     { path: 'partys', component: PartysComponent },
     { path: 'add/party', component: AddPartyComponent },
     { path: 'tarifas', component: TarifasComponent },
-    { path: '**', redirectTo: '/home' } // Redirigir a home para cualquier ruta no encontrada (404)
+    { path: '**', redirectTo: '/home' } 
 ];

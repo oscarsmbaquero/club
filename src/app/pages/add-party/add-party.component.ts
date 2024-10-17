@@ -50,7 +50,6 @@ export class AddPartyComponent {
         fecha: this.addParty.get('fecha')?.value,
         image: this.addParty.get('image')?.value,
       };
-      console.log(newParty);
       this.partysService.addParty(newParty).subscribe(
         (response: any) => {
           this.router.navigate(['partys'])
