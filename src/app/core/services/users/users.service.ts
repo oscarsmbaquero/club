@@ -91,8 +91,6 @@ export class UsersService {
   }): Observable<boolean> {
     const endpoint = `${environment.apiUrl}users/register`;
     // Encriptar la contraseña
-    console.log(credentials);
-
     const encryptedPassword = CryptoJS.AES.encrypt(
       credentials.password,
       this.key

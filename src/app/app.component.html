@@ -2,6 +2,18 @@
 <app-navbar></app-navbar>
 <div class="main">
   <router-outlet />
+  @if(scrollPosition > 150){
+    <div (click)="scrollToTop()">
+      <img
+        src="/images/up.png"
+        class="floating-button-what"
+        width="55"
+        height="55"
+        alt=""
+      />
+    </div>  
+  }
+  
 </div>
 
 <app-footer></app-footer>
