@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { UsersService } from '../../core/services/users/users.service';
+import { PartysService } from '../../core/services/partys/partys.service';
 
 @Component({
   selector: 'app-partys',
@@ -11,14 +12,18 @@ import { UsersService } from '../../core/services/users/users.service';
 })
 export class PartysComponent {
 
+  partys : any
+
   constructor(
-    private userService: UsersService
+    private partysService: PartysService
   
   ){}
 
   ngOnInit(): void {
-   this.userService.getUSers().subscribe((element) =>{
-    console.log(element);
+   this.partysService.getPartys().subscribe((element) =>{
+    this.partys = element;
+    console.log(this.partys);
+    
     
    })
     
