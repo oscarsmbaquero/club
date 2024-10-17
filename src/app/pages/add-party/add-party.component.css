@@ -50,6 +50,35 @@
     font-size: 16px !important;
 }
 
+/* Estilos específicos para mat-form-field */
+.login-container mat-form-field {
+    width: 100%;
+    padding-top: 12px;
+  
+    .mat-form-field-wrapper {
+      padding: 10px 0; 
+    }
+  
+    .mat-form-field-flex {
+      border: 1px solid #f1eded;
+      border-radius: 4px;
+    }
+  
+    .mat-form-field-underline {
+      display: none; 
+    }
+  
+    .mat-form-field-label {
+      font-size: 16px;
+      color: #666;
+    }
+  
+    .mat-input-element {
+      padding: 10px;
+      font-size: 16px !important;
+    }
+  }
+
 /* Botones */
 /* .login-container button {
     width: 100%;

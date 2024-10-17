@@ -31,14 +31,21 @@
         }
       </div>
       <div>
-        <input type="nombre" placeholder="fecha" formControlName="fecha" />
+        <!-- <input type="nombre" placeholder="fecha" formControlName="fecha" />
         @if(addParty.get('fecha')?.invalid && addParty.get('fecha')?.touched){
         <div>
           @if(addParty.get('fecha')?.errors?.['required']){
           <small style="color: red">campo oblogarorio</small>
           }
         </div>
-        }
+        } -->
+        <mat-form-field>
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fecha">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
       </div>
       <input type="file" 
           (change)="onFileSelected($event)" 

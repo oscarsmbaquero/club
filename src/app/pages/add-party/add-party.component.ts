@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
 import {
   FormBuilder,
@@ -6,12 +6,20 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PartysService } from '../../core/services/partys/partys.service';
+//input fecha
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {provideNativeDateAdapter} from '@angular/material/core';
 
 @Component({
   selector: 'app-add-party',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  providers: [provideNativeDateAdapter()],
+  imports: [ReactiveFormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './add-party.component.html',
   styleUrl: './add-party.component.css',
 })
@@ -21,12 +29,13 @@ export class AddPartyComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private partysService: PartysService
+    private partysService: PartysService,
+    private router: Router
   ) {
     this.addParty = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      fecha: ['', [Validators.required]],
+      fecha: [''],
       image: [''],
     });
   }
@@ -44,17 +53,7 @@ export class AddPartyComponent {
       console.log(newParty);
       this.partysService.addParty(newParty).subscribe(
         (response: any) => {
-          //console.log('Datos enviados con éxito');
-          //console.log(response);
-          // this.loading = false;
-          // this.snackBar.open(
-          //   'El producto ha sido añadido correctamente',
-          //   'Cerrar',
-          //   {
-          //     duration: 3000,
-          //   }
-          // );
-          //this.router.navigate(['list']);
+          this.router.navigate(['partys'])
         },
         (error) => {
           console.error('Error al enviar los datos', error);

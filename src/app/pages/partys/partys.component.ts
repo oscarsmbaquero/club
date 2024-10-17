@@ -20,12 +20,10 @@ export class PartysComponent {
   ){}
 
   ngOnInit(): void {
-   this.partysService.getPartys().subscribe((element) =>{
-    this.partys = element;
-    console.log(this.partys);
-    
-    
-   })
+    this.partysService.getPartys().subscribe((element) => {
+      this.partys = this.formatDates(element);
+      console.log(this.partys);
+    });
     
   }
 
@@ -40,6 +38,22 @@ export class PartysComponent {
     const mesActual = fechaActual.getMonth(); // getMonth() devuelve el índice del mes (0-11)
     
     return meses[mesActual]; // Devuelve el nombre del mes
+  }
+   // Función para formatear las fechas y sumarle un día
+   formatDates(events: any[]): any[] {
+    return events.map(event => {
+      const date = new Date(event.fecha);
+      date.setUTCDate(date.getUTCDate() + 1); // Sumar un día
+
+      const formattedDate = date.getUTCDate().toString().padStart(2, '0') + '/' + 
+                            (date.getUTCMonth() + 1).toString().padStart(2, '0') + '/' + 
+                            date.getUTCFullYear();
+
+      return {
+        ...event, // Mantiene el resto de las propiedades del objeto
+        fecha: formattedDate // Reemplaza la fecha con el nuevo formato
+      };
+    });
   }
   
 
