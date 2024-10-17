@@ -12,21 +12,24 @@ export class PartysService {
     private httpClient: HttpClient,
   ) { }
 
+  //TODO HAY QUE CAMBIAR PARTYS POR EVENTS
+  /**
+   * Obtenermos las fiestas 
+   */
   getPartys() {    
     return this.httpClient.get<any[]>(`${environment.apiUrl}parties`);
   }
 
+  /**
+   * Funcion para añadir fiestas 
+   */
   addParty(body: any): Observable<any> {
     const formData = new FormData();
-    console.log(body);
-    
-    //console.log(body, 'bodyasdad');
     formData.append('name', body.name);
     formData.append('description', body.description);
     formData.append('fecha', body.fecha);
     formData.append('image', body.image);
-    //formData.append('date', body.date);
-
+    
     return this.httpClient.post<any>(
       `${environment.apiUrl}parties/addParty`,
       formData
