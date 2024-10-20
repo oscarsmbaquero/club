@@ -7,6 +7,8 @@ import { ListPriceComponent } from './pages/list-price/list-price.component';
 import { PartysComponent } from './pages/partys/partys.component';
 import { AddPartyComponent } from './pages/add-party/add-party.component';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, 
@@ -17,5 +19,7 @@ export const routes: Routes = [
     { path: 'partys', component: PartysComponent },
     { path: 'add/party', component: AddPartyComponent },
     { path: 'tarifas', component: TarifasComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     { path: '**', redirectTo: '/home' } 
 ];

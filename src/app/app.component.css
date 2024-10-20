@@ -1,9 +1,11 @@
+
+
 .main {
   min-height: calc(80vh - 120px); 
   padding: 20px;
   width: 100%; /* Elimina max-width */
   /* background-color: rgb(36, 0, 70); */
-  background-color: #093456;
+  background-color: #000000;
   display: flex;
   padding-top: 100px;
   flex-direction: column;
