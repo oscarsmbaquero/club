@@ -1,0 +1,81 @@
+:root {
+  --first-purple: #240048;
+  --second-purple: #3c096c;
+  --third-purple: #5a189a;
+  --background-main: #000000;
+  --details: #efb810;
+}
+
+.imgFondoAuth {
+  height: 80vh;
+  overflow: hidden;
+}
+.imgFondoAuth:before {
+  background-image: url(../../../../public/images/fondo.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.titleAuth {
+  color: white;
+  font-size: 180px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 60px !important;
+  opacity: 1;
+  z-index: 1;
+}
+.card {
+  background-color: rgba(0, 4, 7, 0);
+  color: white;
+  border:none;
+}
+
+.btn-primary {
+  background-color: var(--third-purple);
+  border-color: var(--third-purple);
+}
+
+.btn-primary:hover {
+  background-color: var(--details);
+  border-color: var(--details);
+}
+
+.text-danger {
+  color: #ff4d4d;
+}
+.textAuth{
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.spanAuth{
+  text-transform: uppercase;
+  transition: .4s ease-out;
+}
+.spanAuth:hover{
+  color: var(--details);
+}
+
+@media only screen and (min-width: 768px) {
+  .titleAuth {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .titleAuth {
+    font-size: 80px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .titleAuth {
+    font-size: 180px;
+  }
+}
