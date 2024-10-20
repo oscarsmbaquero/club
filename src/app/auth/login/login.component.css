@@ -5,9 +5,10 @@
   --background-main: #000000;
   --details: #EFB810;
 }
+.containerAuth{
+  height: 80vh;
+}
 .imgFondoAuth{
-  height: 100vh;
- /* Asegura que el contenedor ocupe todo el ancho del viewport */
   overflow: hidden;
 }
 .imgFondoAuth:before{
@@ -26,7 +27,6 @@
   color: white;
   font-size:180px;
   font-family: "Bebas Neue", sans-serif;
-  margin-bottom: 60px;
   opacity: 1;
   z-index: 1; 
 }
@@ -102,5 +102,11 @@
   }
   label{
     font-size: 15px;
+  }
+  .containerAuth{
+    height: 60vh;
+  }
+  .imgFondoAuth:before{
+    height: 90%;
   }
 }
