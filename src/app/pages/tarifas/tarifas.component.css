@@ -22,6 +22,39 @@ justify-content: center;
 align-items: center;
 }
 
+.font-parejas{
+    font-size:100px;
+    font-family: "Montserrat", sans-serif;
+}
+.font-parejas-text{
+    font-size:20px;
+    font-family: "Montserrat", sans-serif;
+}
+.font-chicos{
+    font-size:100px;
+    font-family: "Bebas Neue", sans-serif;
+}
+.font-chicos-text{
+    font-size:20px;
+    font-family: "Bebas Neue", sans-serif;
+}
+.font-chicas{
+    font-size:100px;
+    font-family: "Roboto", sans-serif;
+}
+.font-chicas-text{
+    font-size:20px;
+    font-family: "Roboto", sans-serif;
+}
+.font-trios{
+    font-size:100px;
+    font-family: "oswald", sans-serif;
+}
+.font-trios-text{
+    font-size:20px;
+    font-family: "oswald", sans-serif;
+}
+
 /* estilos de los panel de primeng */
 :host ::ng-deep .custom-panel .p-panel-header {
     background-color: black !important; /* Color del encabezado */
