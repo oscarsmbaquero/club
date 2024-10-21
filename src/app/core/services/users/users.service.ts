@@ -58,18 +58,8 @@ export class UsersService {
       map((user) => {
         if (user) {
           this.currentUserSubject.next(user);
-          const userTheme = user.data?.theme; // Obtener el tema del usuario
-          const userLanguage = user.data?.language; // Obtener el idioma del usuario
-          const nombreUsuario = user.data?.user ?? null; // Asegurar que sea string o null
-
-          // if (userTheme && userLanguage) {
-          //   this.themeService.initializeTheme(userTheme); // Establecer el tema en ThemeService
-          //   this.translationService.changeLanguage(userLanguage); // Establecer el idioma en TranslationService
-          // }
-
+          const nombreUsuario = user.data?.user ?? null;
           localStorage.setItem('user', JSON.stringify(user));
-
-          // Devuelve un objeto con nombreUsuario y true como success
           return { nombreUsuario, success: true };
         } else {
           // Devuelve un objeto con null para nombreUsuario y false como success
@@ -109,6 +99,15 @@ export class UsersService {
         }
       })
     );
+  }
+
+  getCurrentUser(): Observable<IUser | null> {
+    return this.currentUserSubject.asObservable();
+  }
+
+  setCurrentUser(user: IUser) {
+    this.currentUserSubject.next(user);
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   /**
