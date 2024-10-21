@@ -69,7 +69,8 @@
             <a class="nav-link" [routerLink]="['tarifas']" (click)="closeOffcanvas()">Tarifas</a>
           </li>
           <hr style="color: white;"/>
-          <li class="nav-item dropdown">
+          @if(activeUser && activeUser.data.rol === "'admin'"){
+          <li class="nav-item dropdown"    >
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -90,6 +91,7 @@
             </ul>
           </li>
           <hr style="color: white;"/>
+        }        
           <li>
             <a class="nav-link" routerLink="/login" (click)="closeOffcanvas()">Login</a>
           </li>

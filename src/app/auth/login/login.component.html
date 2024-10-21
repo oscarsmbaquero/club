@@ -18,21 +18,17 @@
             formControlName="email"
             placeholder="Ingresa tu email"
           />
-          <div
-            *ngIf="
-              loginForm.get('email')?.invalid && loginForm.get('email')?.touched
-            "
-            class="text-danger"
-          >
-            <small *ngIf="loginForm.get('email')?.hasError('required')"
-              >Email es requerido.</small
-            >
-            <small *ngIf="loginForm.get('email')?.hasError('email')"
-              >Email no es válido.</small
-            >
-          </div>
+          @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched){
+            <div class="text-danger text-center"> 
+              @if(loginForm.get('email')?.hasError('required')){
+                <small>Email es requerido.</small>
+              }
+              @if(loginForm.get('email')?.hasError('email')){
+                <small>Email no es válido.</small>
+              }                          
+            </div>
+          }         
         </div>
-
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
           <input
@@ -42,20 +38,18 @@
             formControlName="password"
             placeholder="Ingresa tu contraseña"
           />
-          <div
-            *ngIf="
-              loginForm.get('password')?.invalid &&
-              loginForm.get('password')?.touched
-            "
-            class="text-danger"
-          >
-            <small *ngIf="loginForm.get('password')?.hasError('required')"
-              >Contraseña es requerida.</small
-            >
-            <small *ngIf="loginForm.get('password')?.hasError('minlength')"
-              >Mínimo 6 caracteres.</small
-            >
+          @if(loginForm.get('password')?.invalid &&
+              loginForm.get('password')?.touched){
+          <div class="text-danger text-center">
+            @if(loginForm.get('password')?.hasError('required')){
+              <small>Contraseña es requerida.</small>
+            }
+            @if(loginForm.get('password')?.hasError('minlength')){
+              <small>Mínimo 6 caracteres.</small>
+            }                                
           </div>
+              }
+          
         </div>
 
         <button
