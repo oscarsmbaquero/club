@@ -36,7 +36,7 @@ ngOnInit(): void {
     if (this.activeUser) {
       this.activeUserName = this.activeUser.data.user;
       if (this.activeUserName) {
-        console.log(this.activeUser);
+        console.log(this.activeUser.data.rol);
         
         // this.lettersAvatar(this.activeUserName);
         // this.obtenerPedidos();
