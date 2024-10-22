@@ -1,7 +1,7 @@
-<div
-  class="containerAuth"
->
-  <div class="container d-flex flex-column justify-content-center align-items-center imgFondoAuth">
+<div class="containerAuth">
+  <div
+    class="container d-flex flex-column justify-content-center align-items-center imgFondoAuth"
+  >
     <h1 class="text-center mb-4 titleAuth col-12">Únete a Alma's w</h1>
     <div class="card p-4" style="max-width: 600px; width: 100%">
       <form
@@ -18,22 +18,17 @@
             formControlName="email"
             placeholder="Ingresa tu email"
           />
-          <div
-            *ngIf="
-              registerForm.get('email')?.invalid &&
-              registerForm.get('email')?.touched
-            "
-            class="text-danger"
-          >
-            <small *ngIf="registerForm.get('email')?.hasError('required')"
-              >Email es requerido.</small
-            >
-            <small *ngIf="registerForm.get('email')?.hasError('email')"
-              >Email no es válido.</small
-            >
+          @if(registerForm.get('email')?.invalid &&
+          registerForm.get('email')?.touched){
+          <div class="text-danger text-center">
+            @if(registerForm.get('email')?.hasError('required')){
+            <small>Email es requerido.</small>
+            } @if(registerForm.get('email')?.hasError('email')){
+            <small>Email no es válido.</small>
+            }
           </div>
+          }
         </div>
-
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
           <input
@@ -43,22 +38,17 @@
             formControlName="password"
             placeholder="Ingresa tu contraseña"
           />
-          <div
-            *ngIf="
-              registerForm.get('password')?.invalid &&
-              registerForm.get('password')?.touched
-            "
-            class="text-danger"
-          >
-            <small *ngIf="registerForm.get('password')?.hasError('required')"
-              >Contraseña es requerida.</small
-            >
-            <small *ngIf="registerForm.get('password')?.hasError('minlength')"
-              >Mínimo 6 caracteres.</small
-            >
+          @if(registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched){
+          <div class="text-danger text-center">
+            @if(registerForm.get('password')?.hasError('required')){
+            <small>Contraseña es requerida.</small>
+            } @if(registerForm.get('password')?.hasError('minlength')){
+            <small>Mínimo 6 caracteres.</small>
+            }
           </div>
+          }
         </div>
-
         <div class="mb-3">
           <label for="confirmPassword" class="form-label"
             >Confirmar Contraseña</label
@@ -70,14 +60,12 @@
             formControlName="confirmPassword"
             placeholder="Confirma tu contraseña"
           />
-          <div
-            *ngIf="registerForm.invalid && registerForm.hasError('mismatch')"
-            class="text-danger"
-          >
+          @if(registerForm.invalid && registerForm.hasError('mismatch')){
+          <div class="text-danger text-center">
             <small>Las contraseñas no coinciden.</small>
           </div>
+          }
         </div>
-
         <button
           type="submit"
           class="btn btn-primary w-100"

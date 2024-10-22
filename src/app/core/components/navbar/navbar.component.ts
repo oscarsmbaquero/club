@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router'; // Import the RouterModule here
+import { Router } from '@angular/router';
 //import { NavbarService } from '../../services/navbarService/navbar.service';
 import { OffcanvasService } from '../../services/offcanvasService/offcanvas.service';
 import { UsersService } from '../../services/users/users.service';
@@ -21,25 +22,27 @@ selectedOption: any;
    /**
    * nombre del usuario
    */
+  rol: any
    activeUserName: string | undefined;
 
 
 constructor(
   private offcanvasService: OffcanvasService,
-  private usersService: UsersService
+  private usersService: UsersService,
+  private router: Router,
 ){}
 
 ngOnInit(): void {  
 
   this.usersService.getCurrentUser().subscribe((user) => {
+    console.log(user);
+    
     this.activeUser = user;
     if (this.activeUser) {
-      this.activeUserName = this.activeUser.data.user;
+      this.activeUserName = this.activeUser.data.user;      
       if (this.activeUserName) {
-        console.log(this.activeUser.data.rol);
-        
+        console.log(this.activeUser.data.rol);        
         // this.lettersAvatar(this.activeUserName);
-        // this.obtenerPedidos();
       }
     }
   });
@@ -56,6 +59,11 @@ ngAfterViewInit(): void {
 // Método que se llamará al hacer clic en un enlace para cerrar el offcanvas
 closeOffcanvas(): void {
   this.offcanvasService.closeOffcanvas();
+}
+
+logout(): void {
+  this.usersService.clearCurrentUser();
+  this.router.navigate(['/']);
 }
 
 }

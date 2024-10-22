@@ -50,7 +50,7 @@ export class UsersService {
     ).toString();
 
     const encryptedCredentials = {
-      user: credentials.mail,
+      mail: credentials.mail,
       password: encryptedPassword,
     };
 
@@ -61,7 +61,8 @@ export class UsersService {
           const nombreUsuario = user.data?.user ?? null;
           localStorage.setItem('user', JSON.stringify(user));
           return { nombreUsuario, success: true };
-        } else {
+        } 
+        else {
           // Devuelve un objeto con null para nombreUsuario y false como success
           return { nombreUsuario: null, success: false };
         }
@@ -108,6 +109,11 @@ export class UsersService {
   setCurrentUser(user: IUser) {
     this.currentUserSubject.next(user);
     localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  clearCurrentUser() {
+    this.currentUserSubject.next(null);
+    localStorage.removeItem('user');
   }
 
   /**
