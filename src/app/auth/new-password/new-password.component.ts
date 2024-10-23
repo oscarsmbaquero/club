@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JwtService } from '../../core/services/jwt/jwt.service';
 import {
@@ -17,7 +17,7 @@ import { UsersService } from '../../core/services/users/users.service';
   templateUrl: './new-password.component.html',
   styleUrl: '../auth-styles.css'
 })
-export class NewPasswordComponent {
+export class NewPasswordComponent implements OnInit{
   public newPassword: FormGroup;
   public submitted: boolean = false;
   userId = '';
@@ -42,7 +42,7 @@ export class NewPasswordComponent {
       localStorage.setItem('authToken', token);
       const decodeToken = this.jwtService.decodeToken(token);
       this.userId = decodeToken.id;
-      this.userName = decodeToken.user;
+      this.userName = decodeToken.mail;
     });
   }
   public onSubmit(): void {
