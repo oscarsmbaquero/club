@@ -132,31 +132,36 @@ export class UsersService {
   getUSerById(id: string) {
     return this.httpClient.get<IUser[]>(`${environment.apiUrl}users/${id}`);
   }
-  //TODO. POSIBLEMENTE SE NECESITEN
+  
+  getUSerByMail(email: string) {
+    return this.httpClient.get<IUser>(
+      `${environment.apiUrl}users/mail/${email}`
+    );
+  }
 
-  // resetPassword(email: any): Observable<any> {
-  //   const url = `${environment.apiUrl}users/reset-password/${email}`;
-  //   return this.httpClient.post<IUser[]>(url, email);
-  // }
+  resetPassword(email: any): Observable<any> {
+    const url = `${environment.apiUrl}users/reset-password/${email}`;
+    return this.httpClient.post<IUser[]>(url, email);
+  }
 
   // changePassword(id: string, nuevaContrasena: string): Observable<any> {
   //   return this.httpClient.post(`${environment.apiUrlMock}users/changePassword/${id}`,{ nuevaContrasena });
   // }
-  // changePassword(id: string, nuevaContrasena: string): Observable<any> {
-  //   const token = localStorage.getItem('authToken');
-  //   // Cifrar la contraseña
-  //   const encryptedPassword = CryptoJS.AES.encrypt(
-  //     nuevaContrasena,
-  //     this.key
-  //   ).toString();
-  //   return this.httpClient.post(
-  //     `${environment.apiUrl}users/changePassword/${id}`,
-  //     { nuevaContrasena: encryptedPassword },
-  //     {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     }
-  //   );
-  // }
+  changePassword(id: string, nuevaContrasena: string): Observable<any> {
+    const token = localStorage.getItem('authToken');
+    // Cifrar la contraseña
+    const encryptedPassword = CryptoJS.AES.encrypt(
+      nuevaContrasena,
+      this.key
+    ).toString();
+    return this.httpClient.post(
+      `${environment.apiUrl}users/changePassword/${id}`,
+      { nuevaContrasena: encryptedPassword },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  }
 }

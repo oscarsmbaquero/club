@@ -12,7 +12,7 @@ import { UsersService } from '../../core/services/users/users.service';
   standalone: true,
   imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrl: '../auth-styles.css',
 })
 export class RegisterComponent {
   registerForm: FormGroup;

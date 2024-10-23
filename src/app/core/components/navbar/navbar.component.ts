@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Import the RouterModule here
+import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 //import { NavbarService } from '../../services/navbarService/navbar.service';
 import { OffcanvasService } from '../../services/offcanvasService/offcanvas.service';
