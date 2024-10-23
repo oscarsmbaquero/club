@@ -9,6 +9,24 @@
         (ngSubmit)="onSubmit()"
         class="mx-0 my-auto"
       >
+      <div class="mb-3">
+        <label for="user" class="form-label">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="user"
+          placeholder="Ingresa tu nombre"
+        />
+        @if(registerForm.get('user')?.invalid &&
+        registerForm.get('user')?.touched){
+        <div class="text-danger text-center">
+          @if(registerForm.get('user')?.hasError('required')){
+          <small>El nombre es requerido.</small>
+          }
+        </div>
+        }
+      </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input

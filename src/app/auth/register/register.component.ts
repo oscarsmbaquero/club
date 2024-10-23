@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 //servicios
 import { UsersService } from '../../core/services/users/users.service';
+import { NotificationService } from '../../core/services/notificationService/notificationService';
 
 @Component({
   selector: 'app-register',
@@ -20,9 +21,11 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) {
     this.registerForm = this.fb.group({
+      user: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]],
@@ -45,25 +48,29 @@ export class RegisterComponent {
     if (this.registerForm.valid) {      
       // Crear un objeto de usuario con los datos del formulario
       const user: any = {
+        user: this.registerForm.get('user')?.value,
         mail: this.registerForm.get('email')?.value,
         password: this.registerForm.get('password')?.value,
       };
       this.usersService.register(user).subscribe(
         (response) => {
-            console.log(response);
+          this.notificationService.showNotification(
+            'success',
+            `Usuario registrado correctamente`
+          );
 
           setTimeout(() => {
             this.router.navigate(['/login'])  
-          }, 1000);
+          },);
           
         },
         (error) => {
           // Manejo del error que envía el servidor
           if (error.status === 500) {
-            // this.notificationService.showNotification(
-            //   'error',
-            //   'Este mail ya esta regitrado en nuestro sistema'
-            // );
+            this.notificationService.showNotification(
+              'error',
+              'Este mail ya esta regitrado en nuestro sistema'
+            );
             // this.loading = false;
           }
         }

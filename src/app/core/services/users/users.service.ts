@@ -58,7 +58,7 @@ export class UsersService {
       map((user) => {
         if (user) {
           this.currentUserSubject.next(user);
-          const nombreUsuario = user.data?.user ?? null;
+          const nombreUsuario = user.data?.user ?? null;          
           localStorage.setItem('user', JSON.stringify(user));
           return { nombreUsuario, success: true };
         } 

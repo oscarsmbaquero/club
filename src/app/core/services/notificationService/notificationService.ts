@@ -12,6 +12,8 @@ export class NotificationService {
    * Función general para mostrar notificaciones
    */
   showNotification(severity: 'success' | 'error' | 'info' | 'warn', detail: string, summary: string = ''): void {
+    console.log(severity,detail, summary);
+    
     this.messageService.add({
       severity,
       summary,

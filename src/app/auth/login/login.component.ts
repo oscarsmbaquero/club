@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router'; // Import the RouterModule here
+import { RouterModule } from '@angular/router'; 
 import { UsersService } from '../../core/services/users/users.service';
+import { NotificationService } from '../../core/services/notificationService/notificationService';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -16,7 +17,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private usersServices : UsersService,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -32,9 +34,14 @@ onSubmit() {
     };
 
     this.usersServices.login(user).subscribe(
-      (response: any) => {        
+      (response: any) => {                
         // Manejo de la respuesta exitosa (200)
         if ( response.success) {
+          this.notificationService.showNotification(
+            'success',
+            `Bienvenido, ${response.nombreUsuario}`
+          );
+          //this.notificationService.showNotification('success', 'Login exitoso', 'Bienvenido');
           const nombreUser = response.nombreUsuario;
           this.router.navigate(['/partys'])
         }
@@ -44,17 +51,17 @@ onSubmit() {
         if (error.status === 404) {
           // Usuario no encontrado
           console.error('User not found:', error);
-          // const translatedMessage = this.translate.instant(
-          //   'NOTIFICACIONES.USUARIO-NO-EXISTE'
-          // );
-          // console.log(translatedMessage);
+          this.notificationService.showNotification(
+            'error',
+            `Usuario no encontrado`
+          );
         } else if (error.status === 500) {
           // Error en el servidor
           console.error('Server error:', error);
-          // const translatedMessage = this.translate.instant(
-          //   'NOTIFICACIONES.ERROR-SERVIDOR'
-          // );
-          // console.log(translatedMessage);
+          this.notificationService.showNotification(
+            'error',
+            `Error en el servidor, intentelo de nuevo`
+          );
         } else {
           // Otros errores
           console.error('Unexpected error:', error);
