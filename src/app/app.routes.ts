@@ -24,6 +24,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'reset-password', component: ResetPasswordComponent },
-    { path: 'new-password', component: NewPasswordComponent },
+    { path: 'new-password/:token', component: NewPasswordComponent },
     { path: '**', redirectTo: '/home' } 
 ];
