@@ -42,7 +42,7 @@ export class NewPasswordComponent implements OnInit{
       localStorage.setItem('authToken', token);
       const decodeToken = this.jwtService.decodeToken(token);
       this.userId = decodeToken.id;
-      this.userName = decodeToken.mail;
+      //this.userName = decodeToken.mail;
     });
   }
   public onSubmit(): void {
