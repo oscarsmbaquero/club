@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    background-color: #093456;
+    background-color: #240048;
 }
 @media (max-width: 720px) {
     .tarifas {
@@ -64,6 +64,62 @@ align-items: center;
 }
 
 :host ::ng-deep .custom-panel .p-panel-content {
-    background: #093456 !important; /* Color del contenido */
+    background: #240048 !important; /* Color del contenido */
     color: #f1eeee !important; /* Color del texto */
 }
+
+ 
+@media (min-width: 1200px) {
+    .titleAuth{
+      font-size:40px;
+    }
+    label{
+      font-size: 25px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .titleAuth{
+      font-size:40px;
+    }
+    label{
+      font-size: 23px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .titleAuth{
+      font-size:40px;
+    }
+    label{
+      font-size: 19px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .font-parejas{
+        font-size:30px;
+    }
+    .font-parejas-text{
+        font-size:8px;
+    }
+    .font-chicos{
+        font-size:30px;
+    }
+    .font-chicos-text{
+        font-size:8px;
+    }
+    .font-chicas{
+        font-size:30px;
+    }
+    .font-chicas-text{
+        font-size:8px;
+    }
+    .font-trios{
+        font-size:30px;
+    }
+    .font-trios-text{
+        font-size:8px;
+
+    }
+  }

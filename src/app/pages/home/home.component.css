@@ -1,0 +1,131 @@
+/* Hero Section */
+.hero-section {
+    position: relative; /* Para que el pseudo-elemento ::before funcione correctamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Asegura que nada se desborde */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/neon.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2; /* La opacidad solo se aplica al fondo */
+    z-index: 0; /* Asegúrate de que el fondo esté detrás del contenido */
+}
+  .hero-content{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    opacity: 1;
+    z-index: 1; 
+  }
+  .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+  }
+  .btn-primary {
+    background-color: var(--second-purple);
+    border-color: var(--second-purple);
+    transition: .4s ease-out;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+  }
+  .btn-primary > a{
+    color: white;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background-color: var(--third-purple);
+    border-color: var(--third-purple);
+  }
+  /* Servicios Section */
+  .services-section {
+    padding: 3em 0;
+    text-align: center;
+    background-color: var(--first-purple);
+  }
+  .p-card-body {
+    background-color: var(--third-purple) !important;
+  }
+  
+  .services-section h2 {
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
+  }
+  
+  .p-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Testimonios Section */
+  .testimonials-section {
+    padding: 3em 0;
+    background-color: #240048;
+    text-align: center;
+    color:white;
+  }
+  
+  .testimonials-section h2 {
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
+  }
+  
+  .testimonial-item {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  /* Footer */
+  .footer-section {
+    background-color: var(--background-main);
+    color: white;
+    padding: 2em 0;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 1em;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.5em;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links i {
+    margin-right: 8px;
+  }
+  

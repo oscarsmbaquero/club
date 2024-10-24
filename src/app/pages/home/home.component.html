@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="col-12 image-container" *ngFor="let image of images; let i = index"
       [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
@@ -6,4 +6,46 @@
         <div class="parallax-image" [ngStyle]="{'background-image': 'url(' + image + ')'}" data-aos="fade-up"></div>
       </div>
     </div>
+  </div> -->
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Bienvenido a Alma's w Club</h1>
+    <p></p>
+    <button pButton type="button" label="Comenzar" icon="pi pi-arrow-right" class="btn-primary"> <a href="partys"> Descubre nuestras fiestas</a></button>
   </div>
+</section>
+
+<!-- Servicios -->
+<section class="services-section">
+  <h2 class="text-white">Nuestros Servicios</h2>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-4 " *ngFor="let service of services" [@zoomIn]>
+      <p-card class="cardService" [header]="service.name" [style]="{'margin-bottom':'2em'}">
+        <ng-template pTemplate="title" class="cardService">
+          <i [class]="service.icon" style="font-size: 2em;"></i>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p>{{ service.description }}</p>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios Carousel -->
+<section class="testimonials-section">
+  <h2>Lo que Dicen Nuestros Clientes</h2>
+  <p-carousel [value]="testimonials" [numVisible]="1" [circular]="true" [autoplayInterval]="3000">
+    <ng-template let-testimonial pTemplate="item">
+      <div class="testimonial-item">
+        <p-card [header]="testimonial.name">
+          <ng-template pTemplate="content">
+            <p>{{ testimonial.message }}</p>
+          </ng-template>
+        </p-card>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>
+
