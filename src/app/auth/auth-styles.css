@@ -26,8 +26,8 @@
   }
   .titleAuth{
     color: white;
-    font-size:180px;
-    font-family: "Bebas Neue", sans-serif;
+    font-size:40px;
+    font-family: 'Orbitron', sans-serif;
     opacity: 1;
     z-index: 1; 
   }
@@ -72,7 +72,7 @@
   
   @media (min-width: 1200px) {
     .titleAuth{
-      font-size:90px;
+      font-size:40px;
     }
     label{
       font-size: 25px;
@@ -81,7 +81,7 @@
   
   @media (max-width: 1200px) {
     .titleAuth{
-      font-size:90px;
+      font-size:40px;
     }
     label{
       font-size: 23px;
@@ -90,7 +90,7 @@
   
   @media (max-width: 768px) {
     .titleAuth{
-      font-size:80px;
+      font-size:40px;
     }
     label{
       font-size: 19px;
@@ -99,7 +99,7 @@
   
   @media (max-width: 576px) {
     .titleAuth{
-      font-size:50px;
+      font-size:40px;
     }
     label{
       font-size: 15px;
