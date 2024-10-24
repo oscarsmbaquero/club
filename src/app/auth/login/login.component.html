@@ -1,73 +1,79 @@
-<div class="containerAuth">
-  <div
-    class="container d-flex flex-column justify-content-center align-items-center imgFondoAuth" 
-  >
-    <h1 class="text-center titleAuth col-12">Accede a Tu Fantasía</h1>
-    <div class="card p-4" style="max-width: 600px; width: 100%; height: 40%">
-      <form
-        [formGroup]="loginForm"
-        (ngSubmit)="onSubmit()"
-        class="mx-0 my-auto"
-      >
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            id="email"
-            class="form-control"
-            formControlName="email"
-            placeholder="Ingresa tu email"
-          />
-          @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched){
-            <div class="text-danger text-center"> 
-              @if(loginForm.get('email')?.hasError('required')){
-                <small>Email es requerido.</small>
-              }
-              @if(loginForm.get('email')?.hasError('email')){
-                <small>Email no es válido.</small>
-              }                          
-            </div>
-          }         
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            formControlName="password"
-            placeholder="Ingresa tu contraseña"
-          />
-          @if(loginForm.get('password')?.invalid &&
-              loginForm.get('password')?.touched){
-          <div class="text-danger text-center">
-            @if(loginForm.get('password')?.hasError('required')){
-              <small>Contraseña es requerida.</small>
-            }
-            @if(loginForm.get('password')?.hasError('minlength')){
-              <small>Mínimo 6 caracteres.</small>
-            }                                
-          </div>
-              }
-          
-        </div>
-
-        <button
-          type="submit"
-          class="btn btn-primary w-100"
-          [disabled]="loginForm.invalid"
+@if(loading){
+  <app-loading></app-loading>
+} @else {
+  <div class="containerAuth">
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center imgFondoAuth" 
+    >
+      <h1 class="text-center titleAuth col-12">Accede a Tu Fantasía</h1>
+      <div class="card p-4" style="max-width: 600px; width: 100%; height: 40%">
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          class="mx-0 my-auto"
         >
-          Iniciar Sesión
-        </button>
-        <div class="container">
-          <a [routerLink]="['/reset-password']" class="textAuth mt-3"
-            >¿Olvidaste tu contraseña?</a
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="Ingresa tu email"
+            />
+            @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched){
+              <div class="text-danger text-center"> 
+                @if(loginForm.get('email')?.hasError('required')){
+                  <small>Email es requerido.</small>
+                }
+                @if(loginForm.get('email')?.hasError('email')){
+                  <small>Email no es válido.</small>
+                }                          
+              </div>
+            }         
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Ingresa tu contraseña"
+            />
+            @if(loginForm.get('password')?.invalid &&
+                loginForm.get('password')?.touched){
+            <div class="text-danger text-center">
+              @if(loginForm.get('password')?.hasError('required')){
+                <small>Contraseña es requerida.</small>
+              }
+              @if(loginForm.get('password')?.hasError('minlength')){
+                <small>Mínimo 6 caracteres.</small>
+              }                                
+            </div>
+                }
+            
+          </div>
+  
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="loginForm.invalid"
           >
-          <a [routerLink]="['/register']" class="textAuth mt-3"
-            >Aún no tienes usuario, <span class="spanAuth">regístrate</span></a
-          >
-        </div>
-      </form>
+            Iniciar Sesión
+          </button>
+          <div class="container">
+            <a [routerLink]="['/reset-password']" class="textAuth mt-3"
+              >¿Olvidaste tu contraseña?</a
+            >
+            <a [routerLink]="['/register']" class="textAuth mt-3"
+              >Aún no tienes usuario, <span class="spanAuth">regístrate</span></a
+            >
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+}
+
+

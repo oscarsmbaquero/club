@@ -7,16 +7,19 @@ import { Router } from '@angular/router';
 //servicios
 import { UsersService } from '../../core/services/users/users.service';
 import { NotificationService } from '../../core/services/notificationService/notificationService';
+//componentes
+import { LoadingComponent } from '../../shared/components/loading/loading/loading.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule, LoadingComponent],
   templateUrl: './register.component.html',
   styleUrl: '../auth-styles.css',
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  loading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -46,6 +49,7 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {      
+      this.loading = true;
       // Crear un objeto de usuario con los datos del formulario
       const user: any = {
         user: this.registerForm.get('user')?.value,
@@ -54,6 +58,7 @@ export class RegisterComponent {
       };
       this.usersService.register(user).subscribe(
         (response) => {
+          this.loading = false;
           this.notificationService.showNotification(
             'success',
             `Usuario registrado correctamente`
@@ -67,6 +72,7 @@ export class RegisterComponent {
         (error) => {
           // Manejo del error que envía el servidor
           if (error.status === 500) {
+            this.loading = false;
             this.notificationService.showNotification(
               'error',
               'Este mail ya esta regitrado en nuestro sistema'
