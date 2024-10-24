@@ -5,10 +5,11 @@ import { RouterModule } from '@angular/router';
 import { UsersService } from '../../core/services/users/users.service';
 import { NotificationService } from '../../core/services/notificationService/notificationService';
 import { LoadingComponent } from '../../shared/components/loading/loading/loading.component';
+import { FloatLabelModule } from 'primeng/floatlabel';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, LoadingComponent],
+  imports: [ReactiveFormsModule, RouterModule, LoadingComponent, FloatLabelModule],
   templateUrl: './login.component.html',
   styleUrl: '../auth-styles.css'
 })

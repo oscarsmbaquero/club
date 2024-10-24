@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { FloatLabelModule } from 'primeng/floatlabel';
 //servicios
 import { UsersService } from '../../core/services/users/users.service';
 import { NotificationService } from '../../core/services/notificationService/notificationService';
@@ -13,7 +14,7 @@ import { LoadingComponent } from '../../shared/components/loading/loading/loadin
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule, LoadingComponent],
+  imports: [ReactiveFormsModule, MatCardModule, FloatLabelModule, MatInputModule, MatButtonModule, LoadingComponent],
   templateUrl: './register.component.html',
   styleUrl: '../auth-styles.css',
 })

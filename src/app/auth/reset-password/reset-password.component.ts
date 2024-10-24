@@ -10,12 +10,12 @@ import {
 import { Message } from 'primeng/api';
 import { NotificationService } from '../../core/services/notificationService/notificationService';
 import { UsersService } from '../../core/services/users/users.service';
-
-
+//components
+import { LoadingComponent } from '../../shared/components/loading/loading/loading.component';
 @Component({
   selector: 'app-reset-password',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, LoadingComponent],
   templateUrl: './reset-password.component.html',
   styleUrl: '../auth-styles.css'
 })
@@ -45,20 +45,19 @@ export class ResetPasswordComponent {
   }
 
   ngOnInit() {
-    this.messages = [
-      {
-        severity: 'error',
-        summary: '',
-        detail: 'No existe cliente con ese mail',
-      },
-    ];
+    // this.messages = [
+    //   {
+    //     severity: 'error',
+    //     summary: '',
+    //     detail: 'No existe cliente con ese mail',
+    //   },
+    // ];
 }
 
 public onSubmit(): void {
-  this.loading = true;
   this.submitted = true;
-
   if (this.resetPassword.valid) {
+    this.loading = true;
     const email = this.resetPassword.get('mail')?.value;
 
     // Llamada al servicio para obtener el email
@@ -68,7 +67,6 @@ public onSubmit(): void {
 
         if (response && response.status === 200) {
           const userMail = response.data.mail; 
-          console.log('Correo encontrado: ', userMail);
 
           // Llamada al servicio para resetear la contraseña usando el correo recibido
           this.usersService.resetPassword(userMail).subscribe(
@@ -90,6 +88,7 @@ public onSubmit(): void {
             }
           );
         } else if (response && response.status === 404) {
+          this.loading = false;
           console.log('Correo no encontrado');
           this.loading = false;
           this.notificationService.showNotification(

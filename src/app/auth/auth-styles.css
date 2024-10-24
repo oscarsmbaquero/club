@@ -46,6 +46,9 @@
     background-color: var(--details);
     border-color: var(--details);
   }
+  .form-control{
+    margin-top: 30px;
+  }
   
   .text-danger {
     color: #ff4d4d;
@@ -61,6 +64,10 @@
     text-decoration: none;
     text-align: center;
     font-size: small;
+  }
+
+  .button{
+    margin-top: 20px;
   }
   .spanAuth{
     text-transform: uppercase;
