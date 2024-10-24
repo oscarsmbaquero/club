@@ -8,12 +8,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { FloatLabelModule } from 'primeng/floatlabel';
 import { UsersService } from '../../core/services/users/users.service';
 
 @Component({
   selector: 'app-new-password',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FloatLabelModule],
   templateUrl: './new-password.component.html',
   styleUrl: '../auth-styles.css'
 })

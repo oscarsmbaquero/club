@@ -10,12 +10,13 @@ import {
 import { Message } from 'primeng/api';
 import { NotificationService } from '../../core/services/notificationService/notificationService';
 import { UsersService } from '../../core/services/users/users.service';
+import { FloatLabelModule } from 'primeng/floatlabel';
 //components
 import { LoadingComponent } from '../../shared/components/loading/loading/loading.component';
 @Component({
   selector: 'app-reset-password',
   standalone: true,
-  imports: [ReactiveFormsModule, LoadingComponent],
+  imports: [ReactiveFormsModule, LoadingComponent, FloatLabelModule],
   templateUrl: './reset-password.component.html',
   styleUrl: '../auth-styles.css'
 })
