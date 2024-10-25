@@ -1,0 +1,159 @@
+/* Contenedor principal para centrar la tarjeta en la pantalla */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+  }
+  
+  /* Estilos de la tarjeta de perfil */
+  .customer-profile-card {
+    width: 90%; /* Ancho predeterminado en pantallas pequeñas */
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    transition: max-width 0.3s ease-in-out;
+  }
+  
+  /* Ajuste de ancho en pantallas grandes */
+  @media (min-width: 992px) { 
+    .customer-profile-card {
+      max-width: 700px; /* Ancho mayor en pantallas grandes */
+    }
+  }
+  
+  /* Cabecera del perfil */
+  .profile-header {
+    text-align: center;
+    background-color: #4a90e2;
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .customer-name {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  
+  .customer-role {
+    font-size: 0.9em;
+    color: #e3f2fd;
+    margin-bottom: 10px;
+  }
+  
+  .customer-balance {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-top: 5px;
+  }
+  
+  /* Cuerpo de la tarjeta */
+  .profile-body {
+    padding: 20px;
+  }
+  
+  .profile-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .profile-info label {
+    font-weight: 600;
+    color: #777777;
+    flex-basis: 40%;
+  }
+  
+  .profile-info p {
+    flex-basis: 60%;
+    color: #333333;
+    margin: 0;
+  }
+  
+  /* Historial de fiestas */
+  .party-history {
+    margin-top: 20px;
+  }
+  
+  .party-history h3 {
+    font-size: 1.1em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  .party-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .party-history li {
+    font-size: 0.9em;
+    padding: 5px 0;
+    color: #333333;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Pie de la tarjeta */
+  .profile-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .redeem-button,
+  .edit-button,
+  .delete-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón para canjear saldo */
+  .redeem-button {
+    background-color: #ffc107;
+    color: #ffffff;
+  }
+  
+  .redeem-button:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Botón para editar perfil */
+  .edit-button {
+    background-color: #4a90e2;
+    color: #ffffff;
+  }
+  
+  .edit-button:hover {
+    background-color: #357abd;
+  }
+  
+  /* Botón para eliminar perfil */
+  .delete-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  

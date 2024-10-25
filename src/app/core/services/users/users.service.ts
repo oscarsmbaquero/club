@@ -5,10 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { IUser } from '../models/user-models';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-// import { IProduct } from '../models/product.models';
-
-// import { ThemeService } from '../theme/theme.service';
-// import { TranslationService } from '../translateService/translate.service';
 import * as CryptoJS from 'crypto-js';
 
 @Injectable({

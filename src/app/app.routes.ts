@@ -12,6 +12,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { ClientsComponent } from './pages/clients/clients/clients.component';
+import { ProfileComponent } from './pages/profile/profile/profile.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, 
@@ -27,5 +28,6 @@ export const routes: Routes = [
     { path: 'reset-password', component: ResetPasswordComponent },
     { path: 'new-password/:token', component: NewPasswordComponent },
     { path: 'clients', component: ClientsComponent },
+    { path: 'profile', component: ProfileComponent },
     { path: '**', redirectTo: '/home' } 
 ];
