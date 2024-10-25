@@ -61,13 +61,14 @@ align-items: center;
     color: #fff !important; 
     border: none !important; 
     padding: 1.25rem !important; 
-    margin: 1.25rem !important;
+    margin: 0.25rem !important;
 }
 
 :host ::ng-deep .custom-panel .p-panel-content {
     background:  rgb(37, 42, 42) !important; /* Color del contenido */
     color: #f1eeee !important; /* Color del texto */
-    border: none !important
+    border: none !important;
+    border-radius: 8px !important
 }
 
  
