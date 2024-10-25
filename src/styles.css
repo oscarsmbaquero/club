@@ -2,6 +2,10 @@
 /* Estilos para los botones */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+
+
+
+
 :root{
   --first-purple: #240048;
   --second-purple: #3C096C;
