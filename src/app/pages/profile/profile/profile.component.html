@@ -1,41 +1,52 @@
 @if(loading){
 <app-loading></app-loading>
 } @else {
-    <div class="profile-container">
-        <div class="customer-profile-card">
-            <div class="profile-header">
-              <img src="https://via.placeholder.com/150" alt="Customer Profile" class="profile-image" />
-              <h2 class="customer-name">{{user.user}}</h2>
-              <p class="customer-role">Cliente Premium</p>
-              <p class="customer-balance">Saldo: <strong>50€</strong></p>
-            </div>
-            <div class="profile-body">
-              <div class="profile-info">
-                <label>Email:</label>
-                <p>{{user.mail}}</p>
-              </div>
-              <div class="profile-info">
-                <label>Teléfono:</label>
-                <p>{{user.phone | defaultValue}}</p>
-              </div>
-              <div class="profile-info">
-                <label>Dirección:</label>
-                <p>{{user.address |  defaultValue}}</p>
-              </div>
-              <div class="party-history">
-                <h3>Fiestas Asistidas</h3>
-                <ul>
-                  <li>Fiesta de Verano 2023</li>
-                  <li>Noche de Año Nuevo 2022</li>
-                  <li>Fiesta de Halloween 2022</li>
-                </ul>
-              </div>
-            </div>
-            <div class="profile-footer">
-              <button class="redeem-button">Añadir campos</button>
-              <!-- <button class="edit-button">Editar Perfil</button>
+<div class="profile-container">
+  <div class="customer-profile-card">
+    <div class="profile-header">
+      <p-avatar
+        label="{{ palabrasAvatar }}"
+        styleClass="mr-2"
+        [style]="{
+          'background-color': 'black',
+          color: '#ffffff',
+          width: '80px',
+          height: '80px',
+          'font-size': '2rem'
+        }"
+        shape="circle"
+      ></p-avatar>
+      <h2 class="customer-name">{{ user.user }}</h2>
+      <p class="customer-role">Cliente Premium</p>
+      <p class="customer-balance">Saldo: <strong>50€</strong></p>
+    </div>
+    <div class="profile-body">
+      <div class="profile-info">
+        <label>Email:</label>
+        <p>{{ user.mail }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Teléfono:</label>
+        <p>{{ user.phone | defaultValue }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Dirección:</label>
+        <p>{{ user.address | defaultValue }}</p>
+      </div>
+      <div class="party-history">
+        <h3>Fiestas Asistidas</h3>
+        <ul>
+          <li>Fiesta de Verano 2023</li>
+          <li>Noche de Año Nuevo 2022</li>
+          <li>Fiesta de Halloween 2022</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile-footer">
+      <button class="redeem-button">Añadir campos</button>
+      <!-- <button class="edit-button">Editar Perfil</button>
               <button class="delete-button">Eliminar Perfil</button> -->
-            </div>
-          </div>
-        </div> 
+    </div>
+  </div>
+</div>
 }
