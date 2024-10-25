@@ -1,0 +1,22 @@
+ /* pruebas de letras */
+ .primera{
+    color: white;
+    font-family: "oswald", sans-serif;
+  }
+  .segunda{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+  }
+  .tercera{
+    color: white;
+    font-family: "Roboto", sans-serif;
+
+  }
+  .cuarta{
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .quinta{
+    color: white;
+    font-family: 'Bebas Neue';
+  }
