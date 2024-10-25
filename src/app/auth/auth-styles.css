@@ -76,6 +76,10 @@
   .spanAuth:hover{
     color: var(--details);
   }
+
+  .text{
+    font-family: 'Poppins', sans-serif;
+  }
   
   @media (min-width: 1200px) {
     .titleAuth{

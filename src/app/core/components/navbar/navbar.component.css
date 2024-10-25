@@ -1,7 +1,9 @@
 span, h1, a, h5 {
     font-size: 16px;
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Poppins', sans-serif;
     color:white;
+    text-transform: uppercase;
   }
 
   .nav-link {
@@ -10,7 +12,7 @@ span, h1, a, h5 {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #f0f0f0; /* Color de texto al pasar el mouse o al estar enfocado */
+    color: #9fa11c; /* Color de texto al pasar el mouse o al estar enfocado */
 }
 
 .nav-link.active {
