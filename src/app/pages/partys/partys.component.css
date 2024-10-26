@@ -1,5 +1,5 @@
 .sticky-header {
-  /* position: sticky; */
+  position: sticky;
   top: 0; /* Fijo 0px desde la parte superior */
   padding: 20px;
   z-index: 1000; /* Asegura que el encabezado esté por encima del contenido */
@@ -10,6 +10,11 @@ h1 {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   color: white;
+}
+
+.scrolled {
+  color:#EFB810; /* Color cuando se haya alcanzado el umbral de desplazamiento */
+  font-weight: bold;
 }
 
 h2, p, h3 {
