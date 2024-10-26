@@ -1,27 +1,32 @@
 
-<h1  class="sticky-header">Fiestas {{obtenerMesActual()}}</h1>
-<p style="text-align: center;">No te pierdas las fiestas más locas de la noche madrileña. El mejor ambiente swinger de Madrid.</p>
-<div class="card-container">
-      @for(item of partys; track item){
-        <div class="card flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src={{item.image}} alt={{item.nombre}}>
-              <div class="overlay">
-                <!-- <img src="/images/mano.png" style="width: 50px; height: auto;" /> -->
-                <h2>{{item.nombre}}</h2>
-                <p>{{item.fecha}}</p>
-                <!-- <span></span> -->
-              </div>
-              </div>
-              <div class="flip-card-back">
-                <!-- <h1>John Doe</h1> -->
-                <span>{{item.descripcion}}</span>
-                <!-- <p>We love that guy</p> -->
-              </div>
-              </div>  
-        
-      </div>
-    }
-  </div>
+@if(loading){
+  <app-loading></app-loading>
+} @else {
+  <h1  class="sticky-header">Fiestas {{obtenerMesActual()}}</h1>
+  <p style="text-align: center;">No te pierdas las fiestas más locas de la noche madrileña. El mejor ambiente swinger de Madrid.</p>
+  <div class="card-container">
+        @for(item of partys; track item){
+          <div class="card flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src={{item.image}} alt={{item.nombre}}>
+                <div class="overlay">
+                  <!-- <img src="/images/mano.png" style="width: 50px; height: auto;" /> -->
+                  <h2>{{item.nombre}}</h2>
+                  <p>{{item.fecha}}</p>
+                  <!-- <span></span> -->
+                </div>
+                </div>
+                <div class="flip-card-back">
+                  <!-- <h1>John Doe</h1> -->
+                  <span>{{item.descripcion}}</span>
+                  <!-- <p>We love that guy</p> -->
+                </div>
+                </div>  
+          
+        </div>
+      }
+    </div>
+}
+
   

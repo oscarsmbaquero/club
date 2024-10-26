@@ -9,6 +9,12 @@
     height: 80vh;
     display: flex;
   }
+
+  .input{
+    padding: 5px;
+  }
+
+  
   .imgFondoAuth{
     overflow: hidden;
   }
@@ -24,6 +30,7 @@
     top: 0;
     left: 0;
   }
+  
   .titleAuth{
     color: white;
     font-size:30px;

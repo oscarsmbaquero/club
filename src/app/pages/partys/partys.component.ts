@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { UsersService } from '../../core/services/users/users.service';
 import { PartysService } from '../../core/services/partys/partys.service';
+import { LoadingComponent } from '../../shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-partys',
   standalone: true,
-  imports: [],
+  imports: [LoadingComponent],
   templateUrl: './partys.component.html',
   styleUrl: './partys.component.css',
 })
@@ -15,8 +16,12 @@ export class PartysComponent {
   partys: any;
 
   constructor(private partysService: PartysService) {}
+  
+  loading = false;
+
 
   ngOnInit(): void {
+    this.loading = true;
     this.getPartis();
   }
 
@@ -26,6 +31,7 @@ export class PartysComponent {
   getPartis() {
     this.partysService.getPartys().subscribe((element) => {
       this.partys = this.formatDates(element);
+      this.loading = false;
     });
   }
 
