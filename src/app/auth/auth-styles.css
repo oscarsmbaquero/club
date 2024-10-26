@@ -82,6 +82,15 @@
     font-family: 'Poppins', sans-serif;
   }
   
+  /* estilos del check */
+  .check {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+
+  }
+  
   @media (min-width: 1200px) {
     .titleAuth{
       font-size:30px;
