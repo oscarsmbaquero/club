@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    background-color: rgb(37, 42, 42);
+    background-color: var(--second-purple);
 }
 @media (max-width: 720px) {
     .tarifas {
@@ -57,7 +57,7 @@ align-items: center;
 
 /* estilos de los panel de primeng */
 :host ::ng-deep .custom-panel .p-panel-header {
-    background-color: black !important; 
+    background-color: var(--first-purple) !important; 
     color: #fff !important; 
     border: none !important; 
     padding: 1.25rem !important; 
@@ -65,7 +65,7 @@ align-items: center;
 }
 
 :host ::ng-deep .custom-panel .p-panel-content {
-    background:  rgb(37, 42, 42) !important; /* Color del contenido */
+    background: var(--second-purple) !important; /* Color del contenido */
     color: #f1eeee !important; /* Color del texto */
     border: none !important;
     border-radius: 8px !important
