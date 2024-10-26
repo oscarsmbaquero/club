@@ -1,17 +1,20 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import {Component,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { register } from 'swiper/element/bundle';
 import * as AOS from 'aos';
+import ScrollReveal from 'scrollreveal';
 declare var Parallax: any;
-
+register();
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule,CarouselModule, CardModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   animations: [
     trigger('zoomIn', [
       state('void', style({ transform: 'scale(0.5)', opacity: 0 })),
@@ -35,6 +38,17 @@ export class HomeComponent {
     { name: 'Cliente 3', message: 'Una experiencia única, volveré a usarla.' }
   ];
 
+  sliderImagesDesktop = [
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel1_xvtm6z.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel3_xe1u3c.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+  ]
+  sliderImagesMobile = [
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885476/register_inzahy.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885478/besoForma_oqrkh4.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885476/register_inzahy.jpg",
+  ]
+
   images: string[] = [
     'https://res.cloudinary.com/dcfk8yjwr/image/upload/v1682962071/gi5qvq7ue2p5nvpqm7an.jpg',
     // 'public/images/fiesta2.jpg',
@@ -50,6 +64,28 @@ export class HomeComponent {
   }
 
   ngAfterViewInit(): void {
+    const sr = ScrollReveal();
+    sr.reveal('.hero-section', {
+      duration: 3000, // Duración de la animación en ms
+      origin: 'top', // Dirección de donde aparece el elemento
+      distance: '50px', // Distancia del desplazamiento
+      reset: true // Si deseas que la animación se repita al hacer scroll nuevamente
+    });
+
+    sr.reveal('#gallery', {
+      duration: 3000,
+      origin: 'left',
+      distance: '100px',
+      interval: 200,
+      reset: true // Agrega un pequeño intervalo entre las animaciones de cada elemento
+    });
+    sr.reveal('#partys', {
+      duration: 3000,
+      origin: 'right',
+      distance: '300px',
+      interval: 500,
+      reset: true
+    });
     setTimeout(() => {
       AOS.refresh()
     }, 500)
