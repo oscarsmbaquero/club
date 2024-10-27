@@ -75,12 +75,6 @@
     font-size: 2.5em;
   }
   
-  .p-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
   /* Testimonios Section */
   .testimonials-section {
     padding: 3em 0;
@@ -88,57 +82,6 @@
     text-align: center;
     color:white;
   }
-  
-  .testimonials-section h2 {
-    margin-bottom: 1.5em;
-    font-size: 2.5em;
-  }
-  
-  .testimonial-item {
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-  }
-  
-  /* Footer */
-  .footer-section {
-    background-color: var(--background-main);
-    color: white;
-    padding: 2em 0;
-  }
-  
-  .footer-section h4 {
-    margin-bottom: 1em;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5em;
-  }
-  
-  .footer-section ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-section ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-links i {
-    margin-right: 8px;
-  }
-
-.letras{
-  display: flex;
-  justify-content: center;
-  
-}
-
 swiper-slide {
   display: flex;
   align-items: center;
@@ -151,20 +94,59 @@ swiper-slide img {
   width: 100%; 
   object-fit: cover; 
 }
-.slider-containerMobile{
-  height: 100vh; 
-  width: 50%;
-  padding: 10px;
+/* Section Gallery*/
+.section-gallery{
+  overflow-x: hidden;
+  display: flex;
+  color: white;
 }
-
-
+.slider-containerDesktop{
+  height: 80vh; 
+  width: 60%;
+  padding: 35px;
+}
+.img-gallery{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text-gallery{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: var(--details);
+  font-family: "Bebas Neue", sans-serif;
+}
+/*section PArtys*/
+.section-partys{
+  width: 100%;
+  height: 100vh; 
+  overflow-x: hidden;
+}
+.title-partys{
+  text-align: center;
+  color: var(--details);
+  font-family: "Bebas Neue", sans-serif;
+}
+.slider-container-partys{
+  height: 80vh; 
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.slider-container-partys-mobile{
+  display: none;
+  overflow: hidden;
+}
 @media (min-width: 1200px) {
   .hero-content h1 {
     margin-bottom: 3rem;
     font-size: 14rem;
 }
 }
-
 @media (max-width: 1200px) {
   .hero-content h1 {
     margin-bottom: 3rem;
@@ -183,6 +165,30 @@ swiper-slide img {
   .hero-content h1 {
     margin-bottom: 3rem;
     font-size: 6rem;
+}
+.slider-container-partys{
+display: none;
+}
+.slider-container-partys-mobile{
+  display: block;
+  height: 40vh; 
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.section-gallery{
+  display: flex;
+  flex-direction: column;
+}
+.slider-containerDesktop{
+  height: 30vh; 
+  width: 100%;
+  padding: 10px;
+}
+.img-gallery{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 }
 
