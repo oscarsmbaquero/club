@@ -26,7 +26,7 @@ register();
   ]
 })
 export class HomeComponent {
-
+  
   services = [
     { name: 'Servicio 1', description: 'Descripción del servicio 1', icon: 'pi pi-chart-line' },
     { name: 'Servicio 2', description: 'Descripción del servicio 2', icon: 'pi pi-cog' },

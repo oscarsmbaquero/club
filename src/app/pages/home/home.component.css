@@ -147,7 +147,6 @@ swiper-slide img {
     font-size: 14rem;
 }
 }
-
 @media (max-width: 1200px) {
   .hero-content h1 {
     margin-bottom: 3rem;
