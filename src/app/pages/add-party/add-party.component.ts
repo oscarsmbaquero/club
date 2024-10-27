@@ -13,13 +13,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import { FileUploadModule } from 'primeng/fileupload';
 
 @Component({
   selector: 'app-add-party',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [ReactiveFormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, FileUploadModule],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './add-party.component.html',
   styleUrl: './add-party.component.css',
 })

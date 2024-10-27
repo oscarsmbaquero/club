@@ -3,15 +3,14 @@
     <img src="../../../assets/images/foto-foco.jpg" alt="Evento" />
   </div> -->
   <div class="login-container">
-    <img
-      src="/images/logo.JPG"
-      width="80"
-      height="80"
-      alt="logo"
-    />&nbsp;
+    <img src="/images/logo.JPG" width="80" height="80" alt="logo" />&nbsp;
     <form (ngSubmit)="onSubmit()" [formGroup]="addParty">
       <div>
-        <input type="nombre" placeholder="Nombre Fiesta" formControlName="name" />
+        <input
+          type="nombre"
+          placeholder="Nombre Fiesta"
+          formControlName="name"
+        />
         @if(addParty.get('name')?.invalid && addParty.get('name')?.touched){
         <div>
           @if(addParty.get('name')?.errors?.['required']){
@@ -21,8 +20,13 @@
         }
       </div>
       <div>
-        <input type="nombre" placeholder="Descripcion del evento" formControlName="description" />
-        @if(addParty.get('description')?.invalid && addParty.get('description')?.touched){
+        <input
+          type="nombre"
+          placeholder="Descripcion del evento"
+          formControlName="description"
+        />
+        @if(addParty.get('description')?.invalid &&
+        addParty.get('description')?.touched){
         <div>
           @if(addParty.get('description')?.errors?.['required']){
           <small style="color: red">campo oblogarorio</small>
@@ -41,21 +45,35 @@
         } -->
         <mat-form-field>
           <mat-label>Fecha</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="fecha">
+          <input matInput [matDatepicker]="picker" formControlName="fecha" />
           <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
-      <input type="file" 
+      <!-- <input type="file" 
           (change)="onFileSelected($event)" 
           accept="image/*"
-          >
+          > -->
+      <p-fileUpload
+        mode="basic"
+        chooseLabel="Foto"
+        chooseIcon="pi pi-upload"
+        name="demo[]"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000"
+        (change)="onFileSelected($event)"
+      />
 
       <button
         [disabled]="!addParty.valid"
         class="boton"
-        style="margin-top: 10px">
+        style="margin-top: 10px"
+      >
         <span style="color: white; margin-top: 10px">Enviar</span>
       </button>
     </form>
