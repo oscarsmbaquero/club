@@ -9,6 +9,12 @@
     height: 80vh;
     display: flex;
   }
+
+  .input{
+    padding: 5px;
+  }
+
+  
   .imgFondoAuth{
     overflow: hidden;
   }
@@ -24,6 +30,7 @@
     top: 0;
     left: 0;
   }
+  
   .titleAuth{
     color: white;
     font-size:30px;
@@ -80,6 +87,15 @@
 
   .text{
     font-family: 'Poppins', sans-serif;
+  }
+  
+  /* estilos del check */
+  .check {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+
   }
   
   @media (min-width: 1200px) {
