@@ -15,26 +15,31 @@
     <!-- <button pButton type="button" label="Comenzar" icon="pi pi-arrow-right" class="btn-primary" onclick="location.href='partys'">Descubre nuestras fiestas</button> -->
   </div>
 </section>
-<section id="gallery" class="d-flex">
-<swiper-container class="slider-containerDesktop mySwiper col-6">
-  <swiper-slide *ngFor="let sImages of sliderImagesDesktop">
-    <img [src]="sImages" alt="3">
-  </swiper-slide>
-</swiper-container>
-<div class="col-6">
-  <h2>Nuestras instalaciones</h2>
-  <p>lorem</p>
-</div>
-</section>
-
-<section id="partys" class="d-flex">
-  <swiper-container class="slider-containerDesktop mySwiper col-6">
+<section id="gallery" class="section-gallery"  data-aos="fade-right">
+  <swiper-container class="slider-containerDesktop mySwiper" navigation="true">
     <swiper-slide *ngFor="let sImages of sliderImagesDesktop">
+      <img [src]="sImages" alt="3" class="img-gallery">
+    </swiper-slide>
+  </swiper-container>
+  <div class="text-gallery">
+    <h2>Nuestras instalaciones</h2>
+    <p>lorem</p>
+  </div>
+</section> 
+
+<section id="partys" class="d-flex flex-column section-partys"  data-aos="fade-right">
+  <h1 class="title-partys">Nuestras fiestas</h1>
+    <swiper-container class="slider-container-partys mySwiper">
+    <swiper-slide *ngFor="let sImages of sliderImagesDesktop" class="card-partys" slides-per-view="2.5" >
       <img [src]="sImages" alt="3">
     </swiper-slide>
   </swiper-container>
-
-  </section>
+  <swiper-container class="slider-container-partys-mobile mySwiper">
+    <swiper-slide *ngFor="let sImages of sliderImagesDesktop" class="card-partys"slides-per-view="1" >
+      <img [src]="sImages" alt="3">
+    </swiper-slide>
+  </swiper-container>
+</section>
 <!-- <swiper-container class="slider-containerMobile mySwiper" pagination="true" pagination-clickable="true" direction="vertical"
 space-between="30" mousewheel="true">
   <swiper-slide *ngFor="let sImages of sliderImagesMobile">

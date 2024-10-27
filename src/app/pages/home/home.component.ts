@@ -4,6 +4,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { register } from 'swiper/element/bundle';
+import SwiperCore, { Swiper } from 'swiper';
 import * as AOS from 'aos';
 import ScrollReveal from 'scrollreveal';
 declare var Parallax: any;
@@ -42,6 +43,12 @@ export class HomeComponent {
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel1_xvtm6z.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel3_xe1u3c.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
+    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
   ]
   sliderImagesMobile = [
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885476/register_inzahy.jpg",
@@ -54,38 +61,18 @@ export class HomeComponent {
     // 'public/images/fiesta2.jpg',
     // 'public/images/fiesta3.jpg',
   ];
-
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     console.log(this.images);
-    
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out', 
+      once: false, 
+      offset: 300 
+    });
     
   }
 
   ngAfterViewInit(): void {
-    const sr = ScrollReveal();
-    sr.reveal('.hero-section', {
-      duration: 3000, // Duración de la animación en ms
-      origin: 'top', // Dirección de donde aparece el elemento
-      distance: '50px', // Distancia del desplazamiento
-      reset: true // Si deseas que la animación se repita al hacer scroll nuevamente
-    });
-
-    sr.reveal('#gallery', {
-      duration: 3000,
-      origin: 'left',
-      distance: '100px',
-      interval: 200,
-      reset: true // Agrega un pequeño intervalo entre las animaciones de cada elemento
-    });
-    sr.reveal('#partys', {
-      duration: 3000,
-      origin: 'right',
-      distance: '300px',
-      interval: 500,
-      reset: true
-    });
     setTimeout(() => {
       AOS.refresh()
     }, 500)
