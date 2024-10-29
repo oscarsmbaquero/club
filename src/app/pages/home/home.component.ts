@@ -1,12 +1,12 @@
 import {Component,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselModule } from 'primeng/carousel';
+import { CarouselModule, CarouselResponsiveOptions } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { register } from 'swiper/element/bundle';
-import SwiperCore, { Swiper } from 'swiper';
 import * as AOS from 'aos';
 import ScrollReveal from 'scrollreveal';
+
 declare var Parallax: any;
 register();
 @Component({
@@ -61,6 +61,24 @@ export class HomeComponent {
     // 'public/images/fiesta2.jpg',
     // 'public/images/fiesta3.jpg',
   ];
+  responsiveOptions = [
+    {
+      breakpoint: '1024px',
+      numVisible: 3,
+      numScroll: 1
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 2,
+      numScroll: 1
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
+
   ngOnInit(): void {
     console.log(this.images);
     AOS.init({
