@@ -26,7 +26,7 @@
     <p>lorem</p>
   </div>
 </section> 
-<section id="partys" class="d-flex flex-column section-partys"  data-aos="fade-right">
+<!-- <section id="partys" class="d-flex flex-column section-partys"  data-aos="fade-right">
   <h1 class="title-partys">Nuestras fiestas</h1>
     <swiper-container class="slider-container-partys mySwiper">
     <swiper-slide *ngFor="let sImages of sliderImagesDesktop" class="card-partys" slides-per-view="2.5" >
@@ -38,6 +38,40 @@
       <img [src]="sImages" alt="3">
     </swiper-slide>
   </swiper-container>
+</section> -->
+<section data-aos="fade-left">
+  <h1 class="title-partys">Nuestras fiestas</h1>
+  <p-carousel 
+  [value]="sliderImagesDesktop" 
+  [numVisible]="3" 
+  [numScroll]="1" 
+  [responsiveOptions]="responsiveOptions">
+      <ng-template let-sImages pTemplate="item">
+          <div class="gallery-item h-100">
+              <div class="gallery-content">
+                  <div class="image-container">
+                      <img 
+                          [src]="sImages" 
+                          [alt]="sImages" 
+                          class="imagesPartys" />
+                      <p-tag 
+                          [value]="sImages"  
+                          class="image-overlay" 
+                          [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                  </div>
+              </div>
+            <div class="item-footer">
+              <div class="item-title">
+                  Nombre Fiesta
+              </div>
+              <div class="product-name">
+                  Nombre del producto
+              </div>
+              </div>
+          </div>
+      </ng-template>
+</p-carousel>
+
 </section>
 <!-- <swiper-container class="slider-containerMobile mySwiper" pagination="true" pagination-clickable="true" direction="vertical"
 space-between="30" mousewheel="true">
