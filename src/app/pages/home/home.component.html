@@ -1,115 +1,56 @@
-<!-- <div class="container">
-    <div class="row">
-      <div class="col-12 image-container" *ngFor="let image of images; let i = index"
-      [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
-      >
-        <div class="parallax-image" [ngStyle]="{'background-image': 'url(' + image + ')'}" data-aos="fade-up"></div>
-      </div>
+<div class="scroll-container">
+  <section class="hero-section scroll-item">
+    <div class="hero-content">
+      <p class=""hero-content_p>Explora lo Prohibido</p>
+      <h1 class=""hero-content_h1><span class="hero-content_span">Alma's w </span>Club</h1>
     </div>
-  </div> -->
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-content">
-    <p class=""hero-content_p>Explora lo Prohibido</p>
-    <h1 class=""hero-content_h1><span class="hero-content_span">Alma's w </span>Club</h1>
-    <!-- <button pButton type="button" label="Comenzar" icon="pi pi-arrow-right" class="btn-primary" onclick="location.href='partys'">Descubre nuestras fiestas</button> -->
-  </div>
-</section>
-<section id="gallery" class="section-gallery"  data-aos="fade-right">
-  <swiper-container class="slider-containerDesktop mySwiper" navigation="true">
-    <swiper-slide *ngFor="let sImages of sliderImagesDesktop">
-      <img [src]="sImages" alt="3" class="img-gallery">
-    </swiper-slide>
-  </swiper-container>
-  <div class="text-gallery">
-    <h2>Nuestras instalaciones</h2>
-    <p>lorem</p>
-  </div>
-</section> 
-<!-- <section id="partys" class="d-flex flex-column section-partys"  data-aos="fade-right">
-  <h1 class="title-partys">Nuestras fiestas</h1>
-    <swiper-container class="slider-container-partys mySwiper">
-    <swiper-slide *ngFor="let sImages of sliderImagesDesktop" class="card-partys" slides-per-view="2.5" >
-      <img [src]="sImages" alt="3">
-    </swiper-slide>
-  </swiper-container>
-  <swiper-container class="slider-container-partys-mobile mySwiper">
-    <swiper-slide *ngFor="let sImages of sliderImagesDesktop" class="card-partys"slides-per-view="1" >
-      <img [src]="sImages" alt="3">
-    </swiper-slide>
-  </swiper-container>
-</section> -->
-<section data-aos="fade-left">
-  <h1 class="title-partys">Nuestras fiestas</h1>
-  <p-carousel 
-  [value]="sliderImagesDesktop" 
-  [numVisible]="3" 
-  [numScroll]="1" 
-  [responsiveOptions]="responsiveOptions">
-      <ng-template let-sImages pTemplate="item">
-          <div class="gallery-item h-100">
-              <div class="gallery-content">
-                  <div class="image-container">
-                      <img 
-                          [src]="sImages" 
-                          [alt]="sImages" 
-                          class="imagesPartys" />
-                      <p-tag 
-                          [value]="sImages"  
-                          class="image-overlay" 
-                          [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
-                  </div>
-              </div>
-            <div class="item-footer">
-              <div class="item-title">
-                  Nombre Fiesta
-              </div>
-              <div class="product-name">
-                  Nombre del producto
-              </div>
-              </div>
-          </div>
-      </ng-template>
-</p-carousel>
+  </section>
 
-</section>
-<!-- <swiper-container class="slider-containerMobile mySwiper" pagination="true" pagination-clickable="true" direction="vertical"
-space-between="30" mousewheel="true">
-  <swiper-slide *ngFor="let sImages of sliderImagesMobile">
-    <img [src]="sImages" alt="3">
-  </swiper-slide>
-</swiper-container> -->
-
-<!-- Servicios -->
-<!-- <section class="services-section">
-  <h2 class="text-white">Nuestros Servicios</h2>
-  <div class="p-grid">
-    <div class="p-col-12 p-md-4 " *ngFor="let service of services" [@zoomIn]>
-      <p-card class="cardService" [header]="service.name" [style]="{'margin-bottom':'2em'}">
-        <ng-template pTemplate="title" class="cardService">
-          <i [class]="service.icon" style="font-size: 2em;"></i>
-        </ng-template>
-        <ng-template pTemplate="content">
-          <p>{{ service.description }}</p>
-        </ng-template>
-      </p-card>
-    </div>
-  </div>
-</section> -->
-
-<!-- Testimonios Carousel -->
-<!-- <section class="testimonials-section">
-  <h2>Lo que Dicen Nuestros Clientes</h2>
-  <p-carousel [value]="testimonials" [numVisible]="1" [circular]="true" [autoplayInterval]="3000">
-    <ng-template let-testimonial pTemplate="item">
-      <div class="testimonial-item">
-        <p-card [header]="testimonial.name">
-          <ng-template pTemplate="content">
-            <p>{{ testimonial.message }}</p>
+  <section class="section-gallery scroll-item"  data-aos="fade-right">
+    <h1 class="title-gallery">Nuestras Instalaciones</h1>
+  <p-galleria 
+      [value]="sliderImagesDesktop"  
+      [numVisible]="1" 
+      [autoPlay]="true" 
+      [circular]="true" 
+      [showItemNavigators]="true" 
+      [showThumbnails]="false"  >
+          <ng-template pTemplate="item" let-item>
+              <img [src]="item" alt="prueba" class="image-gallery" style="width: 100%;" />
           </ng-template>
-        </p-card>
-      </div>
-    </ng-template>
-  </p-carousel>
-</section> -->
+  </p-galleria>
+  </section> 
 
+  <section data-aos="fade-left" class="partys scroll-item">
+    <h1 class="title-partys">Nuestras fiestas</h1>
+    <p-carousel 
+    [value]="sliderImagesDesktop" 
+    [numVisible]="3" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptionsPartys">
+        <ng-template let-sImages pTemplate="item">
+            <div class="parties-item">
+                <div class="parties-content">
+                    <div class="image-container">
+                        <img 
+                            [src]="sImages" 
+                            [alt]="sImages" 
+                            class="imagesPartys" />
+                        <p-tag 
+                            [value]="sImages"  
+                            class="image-overlay" 
+                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                    </div>
+                </div>
+              <div class="item-footer">
+                <div class="item-title">
+                    Nombre Fiesta
+                </div>
+
+                </div>
+            </div>
+        </ng-template>
+  </p-carousel>
+  </section>
+</div>

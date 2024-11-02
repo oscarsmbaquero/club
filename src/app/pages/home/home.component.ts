@@ -1,18 +1,16 @@
 import {Component,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselModule, CarouselResponsiveOptions } from 'primeng/carousel';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { register } from 'swiper/element/bundle';
 import * as AOS from 'aos';
-import ScrollReveal from 'scrollreveal';
 
 declare var Parallax: any;
-register();
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,CarouselModule, CardModule],
+  imports: [CommonModule,CarouselModule, CardModule, GalleriaModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -42,18 +40,11 @@ export class HomeComponent {
   sliderImagesDesktop = [
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel1_xvtm6z.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884050/carousel3_xe1u3c.jpg",
+    "https://res.cloudinary.com/de3ujeyub/image/upload/v1730479636/samples/outdoor-woman.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
     "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729884051/carousel2_hrdhmh.jpg",
-  ]
-  sliderImagesMobile = [
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885476/register_inzahy.jpg",
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885478/besoForma_oqrkh4.jpg",
-    "https://res.cloudinary.com/dfq4zdkea/image/upload/v1729885476/register_inzahy.jpg",
   ]
 
   images: string[] = [
@@ -61,7 +52,7 @@ export class HomeComponent {
     // 'public/images/fiesta2.jpg',
     // 'public/images/fiesta3.jpg',
   ];
-  responsiveOptions = [
+  responsiveOptionsPartys = [
     {
       breakpoint: '1024px',
       numVisible: 3,
@@ -75,7 +66,8 @@ export class HomeComponent {
     {
       breakpoint: '560px',
       numVisible: 1,
-      numScroll: 1
+      numScroll: 1,
+
     }
   ];
 
