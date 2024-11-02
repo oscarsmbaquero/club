@@ -1,4 +1,4 @@
-<div class="card tarifas">
+<!-- <div class="card tarifas">
   <div class="horario">
     <h1>HORARIOS</h1>
     <h5>De domingo a jueves : 21-05 h.</h5>
@@ -60,4 +60,65 @@
         (Los trios siempre tienen uso completo de instalaciones)<br/>
     </p>
   </p-panel>
-</div>
+</div> -->
+<section>
+  <h1 class="title-tarifas">Descubre nuestras tarifas</h1>
+  <section class="container-cards" >
+    <div *ngFor="let cardTarifa of cardsTarifas">
+      <div class="card" [ngStyle]="{'background-image': 'url(' + cardTarifa.src + ')'}">
+        <div class="content">
+          <h2 class="title">{{cardTarifa.name}}</h2>
+          <div *ngFor="let desc of cardTarifa.description">
+            <p class="copy">{{ desc }}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<!-- <section >
+  <h1 class="title-tarifas">Tarifas</h1>
+  <section class="container-cards">
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Chicos</h2>
+        <p class="copy">        Domingo a miércoles – 50€ – 1 copa y uso completo instalaciones.<br/>
+          Jueves – 30€ – 2 copas y acceso a zona común. Acceso completo a instalaciones supervisado por encargado de sala (+50€)<br/>
+          Vísperas de festivo – 80€ – 2 copas y uso completo instalaciones.<br/>
+          Entrada selectiva bajo supervisión de encargado de sala.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Chicas</h2>
+        <p class="copy">De domingo a jueves – 10€ – 1 copa y uso completo de instalaciones.<br/>
+          Viernes y sábados – 20€ – 1 copa y uso completo de instalaciones.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Trios</h2>
+        <p class="copy">Pareja y un chico<br/>
+          Domingo a miércoles 100€ – 5 copas<br/>
+          Jueves – 130€ – 6 copas<br/>        
+          Pareja y un chica<br/>
+          Viernes y sábado 100€ – 6 copas<br/>
+          Domingo a jueves 70€ – 6 copas<br/>        
+          (Los trios siempre tienen uso completo de instalaciones)<br/></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Parejas</h2>
+        <p class="copy">Pareja y un chico<br/>
+          De domingo a jueves – 50€ – 4 copas<br />
+      Viernes – 60€ – 4 copas<br />
+      Sábado – 70€ – 4 copas<br />
+      Víspera de festivo: 50€ con 4 copas y uso completo de instalaciones.<br /></p>
+      </div>
+    </div>
+  </section>
+
+ -->
