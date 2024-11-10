@@ -72,7 +72,14 @@
   height: 100%;
   object-fit: cover;
 }
-
+/* Club definition*/
+.section-text{
+ height: 60vh;
+}
+.textCompany{
+  font-family: "oswald", sans-serif;
+  font-size: 50px
+}
 /* GALERÍA DE PRIMENG */
 /* Contenedor principal */
 .parties-container {
