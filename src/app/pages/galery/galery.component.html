@@ -15,3 +15,24 @@
     <p class="quinta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel augue eget nisl bibendum fringilla. Ut venenatis sapien id lectus vulputate, ac tincidunt nulla accumsan. Curabitur nec arcu at justo tristique sodales. Quisque laoreet consequat nisi, ac ultricies elit gravida sit amet. Integer malesuada eu nisi nec varius. Sed sed urna non magna dignissim fermentum.
     </p>
   </div>
+  <section>
+    <h1 class="gallery-title">Galeria de imágenes</h1>
+    <div class="columns">
+      <div class="column column-reverse mt-5">
+      @for(item of sliderImagesDesktop; track item){
+
+              <img src={{item}} alt={{item}}>
+      }
+    </div>
+    <div class="column">
+      @for(item of sliderImagesDesktop; track item){
+              <img src={{item}} alt={{item}}>
+      }
+    </div>
+    <div class="column column-reverse mt-5">
+      @for(item of sliderImagesDesktop; track item){
+        <img src={{item}} alt={{item}}>
+      }
+    </div>
+  </div>
+  </section>

@@ -20,3 +20,61 @@
     color: white;
     font-family: 'Bebas Neue';
   }
+
+  .gallery-title{
+    text-align: center;
+    color: var(--details);
+    font-family: "oswald", sans-serif;
+    font-size: 50px;
+  }
+
+  img {
+    width: 400px;
+    box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.35);
+  }
+  
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: hidden;
+  }
+  
+  .column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .column-reverse {
+    flex-direction: column-reverse;
+    transform: translateY(calc(-100% + 100vh));
+    animation: adjust-position linear forwards;
+    animation-timeline: scroll(root block);
+  }
+  
+  @keyframes adjust-position {
+    from {
+      transform: translateY(calc(-100% + 100vh));
+    }
+    to {
+      transform: translateY(calc(100% - 100vh));
+    }
+  }
+
+  @media (max-width: 576px) {
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      overflow-y: hidden;
+    }
+    .column:nth-child(1){
+      display: none;
+    }
+    .column:nth-child(2){
+      display: none;
+    }
+  }
+
+  
