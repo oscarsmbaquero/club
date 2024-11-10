@@ -73,8 +73,9 @@
   object-fit: cover;
 }
 /* Club definition*/
-.section-text{
- height: 60vh;
+.section-text > img{
+  width: 80%;
+
 }
 .textCompany{
   font-family: "oswald", sans-serif;
@@ -183,6 +184,10 @@
 }
 .section-partys{
   height: auto; 
+}
+.textCompany{
+  font-family: "oswald", sans-serif;
+  font-size: 20px
 }
 }
 
