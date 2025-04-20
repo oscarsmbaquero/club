@@ -102,9 +102,6 @@
     .titleAuth{
       font-size:30px;
     }
-    label{
-      font-size: 25px;
-    }
     .container{
       width: 100%;
     }
@@ -114,9 +111,6 @@
     .titleAuth{
       font-size:30px;
     }
-    label{
-      font-size: 23px;
-    }
     .container{
       width: 100%;
     }
@@ -125,9 +119,6 @@
   @media (max-width: 768px) {
     .titleAuth{
       font-size:40px;
-    }
-    label{
-      font-size: 19px;
     }
     .container{
       width: 100%;
